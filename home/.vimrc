@@ -25,7 +25,7 @@ colorscheme railscasts
 let mapleader=","
 
 " allow buffers to be hidden instead of closing
-set hidden 
+set hidden
 
 " buffer naviation
 map <leader>n :bn<cr>
@@ -68,6 +68,8 @@ set shiftwidth=2	 " set number of spaces to use for autoindenting
 set expandtab
 set smarttab
 
+set autoread      " set to auto read when a file is changed from the outside
+set showmatch     " set matching brackets when text indicator is over them
 
 " airline
 set laststatus=2
@@ -122,3 +124,14 @@ inoremap <A-j> <ESC>:m .+1<CR>==gi
 inoremap <A-k> <ESC>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv==gv
 vnoremap <A-k> :m '<-2<CR>gv==gv
+
+" tmuxline
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'c'    : '#H',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'x'    : '%a',
+      \'y'    : '#W %R',
+      \'z'    : '#H'}
