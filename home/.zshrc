@@ -48,8 +48,6 @@ DISABLE_AUTO_TITLE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git tmux common-aliases compleat dircycle dirhistory gitfast git-extras)
 
-# ZSH_TMUX_AUTOSTART="true"
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

@@ -12,15 +12,26 @@ Plugin 'jgdavey/vim-railscasts'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'ervandew/supertab'
+"Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'goatslacker/mango.vim'
+Plugin 'scrooloose/syntastic'
 
 " All plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
 
-syntax on
-
 set t_Co=256
-colorscheme railscasts
+set background=dark
+syntax on
+color mango
+
+set pastetoggle=<F12>     " sane indentations when pasting
+set cursorline
+set encoding=utf-8        " necessary to show unicode glyps
 
 let mapleader=","
 
@@ -35,6 +46,9 @@ map <leader>d :bd<cr>
 " not sure what the following 2 do
 map <leader>g :e#<cr>
 map <leader>l :ls<cr>
+
+" clear highlighting with , + /
+nmap <silent> ,/ :nohlsearch<CR>
 
 nnoremap <leader>1 :1b<cr>
 nnoremap <leader>2 :2b<cr>
@@ -69,7 +83,7 @@ set expandtab
 set smarttab
 
 set autoread      " set to auto read when a file is changed from the outside
-set showmatch     " set matching brackets when text indicator is over them
+"set showmatch     " set matching brackets when text indicator is over them
 
 " airline
 set laststatus=2
@@ -129,7 +143,6 @@ vnoremap <A-k> :m '<-2<CR>gv==gv
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'b'    : '#W',
-      \'c'    : '#H',
       \'win'  : '#I #W',
       \'cwin' : '#I #W',
       \'x'    : '%a',
