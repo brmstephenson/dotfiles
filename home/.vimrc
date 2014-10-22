@@ -6,28 +6,36 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+
+" Information panels
 Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'jgdavey/vim-railscasts'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+
+Plugin 'kien/ctrlp.vim' " Fuzzy file finder
+Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic' " Checks for syntax errors
+
+" Syntax highlighters
 "Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
-"Plugin 'goatslacker/mango.vim'
-Plugin 'scrooloose/syntastic'
+
+" Colorschemes
+Plugin 'jonathanfilip/vim-lucius'
+Plugin 'jgdavey/vim-railscasts'
+Plugin 'goatslacker/mango.vim'
+Plugin 'altercation/vim-colors-solarized'
 
 " All plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
 
-set t_Co=256
-set background=dark
 syntax on
-color mango
+set background=light
+color lucius
 
 set pastetoggle=<F12>     " sane indentations when pasting
 set cursorline
@@ -94,17 +102,17 @@ let g:airline_theme='powerlineish'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-"git gutter (with railscasts)
-highlight SignColumn ctermbg=black
-highlight GitGutterAdd ctermbg=black
-highlight GitGutterChange ctermbg=black
-highlight GitGutterDelete ctermbg=black
-highlight GitGutterChangeDelete ctermbg=black
+" "git gutter (with railscasts)
+" highlight SignColumn ctermbg=black
+" highlight GitGutterAdd ctermbg=black
+" highlight GitGutterChange ctermbg=black
+" highlight GitGutterDelete ctermbg=black
+" highlight GitGutterChangeDelete ctermbg=black
 
-highlight GitGutterAdd ctermfg=46 "Green
-highlight GitGutterChange ctermfg=220 "Gold
-highlight GitGutterDelete ctermfg=196 "Red
-highlight GitGutterChangeDelete ctermfg=208 "DarkOrange
+" highlight GitGutterAdd ctermfg=46 "Green
+" highlight GitGutterChange ctermfg=220 "Gold
+" highlight GitGutterDelete ctermfg=196 "Red
+" highlight GitGutterChangeDelete ctermfg=208 "DarkOrange
 
 " tmux-complete configuration
 let g:tmuxcomplete#trigger = 'completefunc'
@@ -115,7 +123,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" not entirely sure
+" close syntastic error window by deleting buffer
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd lclose\|bdelete
 
@@ -148,3 +156,9 @@ let g:tmuxline_preset = {
       \'x'    : '%a',
       \'y'    : '#W %R',
       \'z'    : '#H'}
+
+" prevent window from scrolling when switching buffers
+if v:version >= 700
+  au BufLeave * let b:winview = winsaveview()
+  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+endif
