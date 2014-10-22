@@ -18,6 +18,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic' " Checks for syntax errors
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " Syntax highlighters
 "Plugin 'pangloss/vim-javascript'
@@ -103,16 +105,16 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " "git gutter (with railscasts)
-" highlight SignColumn ctermbg=black
-" highlight GitGutterAdd ctermbg=black
-" highlight GitGutterChange ctermbg=black
-" highlight GitGutterDelete ctermbg=black
-" highlight GitGutterChangeDelete ctermbg=black
+highlight SignColumn ctermbg=black
+highlight GitGutterAdd ctermbg=black
+highlight GitGutterChange ctermbg=black
+highlight GitGutterDelete ctermbg=black
+highlight GitGutterChangeDelete ctermbg=black
 
-" highlight GitGutterAdd ctermfg=46 "Green
-" highlight GitGutterChange ctermfg=220 "Gold
-" highlight GitGutterDelete ctermfg=196 "Red
-" highlight GitGutterChangeDelete ctermfg=208 "DarkOrange
+highlight GitGutterAdd ctermfg=46 "Green
+highlight GitGutterChange ctermfg=220 "Gold
+highlight GitGutterDelete ctermfg=196 "Red
+highlight GitGutterChangeDelete ctermfg=208 "DarkOrange
 
 " tmux-complete configuration
 let g:tmuxcomplete#trigger = 'completefunc'
