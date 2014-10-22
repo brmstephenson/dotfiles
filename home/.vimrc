@@ -25,6 +25,7 @@ Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic' " Checks for syntax errors
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'scrooloose/nerdtree'
 
 " Syntax highlighters
 "Plugin 'pangloss/vim-javascript'
@@ -108,6 +109,9 @@ let g:airline_theme='powerlineish'
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
 
 " "git gutter (with railscasts)
 highlight SignColumn ctermbg=black
