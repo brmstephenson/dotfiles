@@ -1,6 +1,11 @@
 set nocompatible
 filetype off
 
+" clone Vundle directory if it doesn't already exist
+if !isdirectory(expand("~/.vim/bundle/vundle/.git"))
+    !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+endif
+
 "set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
