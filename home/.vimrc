@@ -26,6 +26,7 @@ Plugin 'scrooloose/syntastic' " Checks for syntax errors
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-bufferline'
 
 " Syntax highlighters
 "Plugin 'pangloss/vim-javascript'
