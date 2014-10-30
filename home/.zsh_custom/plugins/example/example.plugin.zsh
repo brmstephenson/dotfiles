@@ -1,1 +1,0 @@
-/home/adam/.homesick/repos/dotfiles/home/.oh-my-zsh/custom/plugins/example/example.plugin.zsh
