@@ -46,6 +46,8 @@ syntax on
 set background=light
 color lucius
 
+inoremap jk <ESC>         " use jk to exit Insert mode
+
 set pastetoggle=<F12>     " sane indentations when pasting
 set cursorline
 set encoding=utf-8        " necessary to show unicode glyps
