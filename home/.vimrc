@@ -23,12 +23,13 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic' " Checks for syntax errors
+Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-bufferline'
 Plugin 'fatih/vim-go'
-Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'gerw/vim-HiLinkTrace'
 
 " Snipmate
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -36,15 +37,21 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 
-" Syntax highlighters
-"Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
-
 " Colorschemes
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'jgdavey/vim-railscasts'
 Plugin 'goatslacker/mango.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'blerins/flattown'
+Plugin 'crusoexia/vim-monokai'
+
+" Syntax highlighters
+Plugin 'pangloss/vim-javascript'
+" Plugin 'jelera/vim-javascript-syntax'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mxw/vim-jsx'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -62,6 +69,9 @@ set encoding=utf-8        " necessary to show unicode glyps
 
 let mapleader=","
 
+" 'mxw/vim-jsx' do not require *.jxs extension to highlight jsx code
+let g:jsx_ext_required = 0
+
 " allow buffers to be hidden instead of closing
 set hidden
 
@@ -70,13 +80,16 @@ map <leader>n :bn<cr>
 map <leader>p :bp<cr>
 map <leader>d :bd<cr>
 
-" not sure what the following 2 do
+" switch to previously used buffer
 map <leader>g :e#<cr>
+
+" list buffers
 map <leader>l :ls<cr>
 
 " clear highlighting with , + /
 nmap <silent> ,/ :nohlsearch<CR>
 
+" easily swithc between buffers 1-10
 nnoremap <leader>1 :1b<cr>
 nnoremap <leader>2 :2b<cr>
 nnoremap <leader>3 :3b<cr>
@@ -188,3 +201,7 @@ if v:version >= 700
   au BufLeave * let b:winview = winsaveview()
   au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 endif
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
