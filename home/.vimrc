@@ -1,3 +1,5 @@
+"my vimrc
+
 set nocompatible
 filetype off
 
