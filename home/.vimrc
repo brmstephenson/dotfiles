@@ -13,8 +13,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Information panels
-Plugin 'bling/vim-airline'
+" ** Important that tmuxline.vim comes before vim-airline so that it can
+" ** inherit color theme
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'kien/ctrlp.vim' " Fuzzy file finder
