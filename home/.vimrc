@@ -13,8 +13,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Information panels
-Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'kien/ctrlp.vim' " Fuzzy file finder
@@ -23,6 +23,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic' " Checks for syntax errors
+Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdtree'
@@ -37,8 +38,10 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 
 " Syntax highlighters
-"Plugin 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
+Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'mxw/vim-jsx'
 
 " Colorschemes
 Plugin 'jonathanfilip/vim-lucius'
@@ -51,7 +54,6 @@ call vundle#end()
 filetype plugin indent on
 
 syntax on
-set background=light
 color lucius
 
 inoremap jk <ESC>
@@ -117,6 +119,8 @@ set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='powerlineish'
 
+let g:jsx_ext_required = 0
+
 " ctrlp
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>' " change the default mapping
@@ -162,6 +166,7 @@ while c <= 'z'
     exec "imap \e".c." <A-".c.">"
     let c = nr2char(1+char2nr(c))
 endw
+unlet c
 
 set timeout ttimeoutlen=50
 

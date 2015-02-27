@@ -46,7 +46,7 @@ ZSH_CUSTOM=$HOME/.zsh_custom/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux common-aliases compleat dircycle dirhistory gitfast git-extras docker)
+plugins=(git tmux common-aliases compleat dircycle dirhistory gitfast git-extras)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,9 +81,9 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+source "$HOME/.bash_aliases"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 
 source "$HOME/z.sh"
