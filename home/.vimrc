@@ -58,6 +58,7 @@ Plugin 'crusoexia/vim-monokai'
 call vundle#end()
 filetype plugin indent on
 
+set background=light
 syntax on
 color lucius
 

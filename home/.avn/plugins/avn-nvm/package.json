@@ -1,0 +1,69 @@
+{
+  "name": "avn-nvm",
+  "version": "0.1.4",
+  "description": "avn plugin for nvm",
+  "homepage": "https://github.com/wbyoung/avn-nvm",
+  "bugs": {
+    "url": "https://github.com/wbyoung/avn-nvm/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover ./node_modules/.bin/_mocha --report $(if [ \"$TRAVIS\" ]; then echo lcovonly; else echo html; fi) -- && if [ \"$TRAVIS\" ]; then cat ./coverage/lcov.info | ./node_modules/.bin/coveralls; fi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wbyoung/avn-nvm.git"
+  },
+  "keywords": [
+    "avn",
+    "node",
+    "n",
+    "version",
+    "switch",
+    "automatic",
+    "cd",
+    "change",
+    "directory"
+  ],
+  "author": {
+    "name": "Whitney Young"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "concat-stream": "^1.4.6",
+    "q": "^2.0.2",
+    "semver": "^4.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "chai": "^1.10.0",
+    "should": "^4.3.0",
+    "istanbul": "^0.3.2",
+    "coveralls": "^2.11.2"
+  },
+  "peerDependencies": {
+    "avn": "0.1.x"
+  },
+  "gitHead": "a0c62f451adcdaf60798256d2a684f059146b4b2",
+  "_id": "avn-nvm@0.1.4",
+  "_shasum": "59c540a6c141be714ffb294ecb9c53978f5c45af",
+  "_from": "avn-nvm@*",
+  "_npmVersion": "2.1.18",
+  "_nodeVersion": "0.10.26",
+  "_npmUser": {
+    "name": "wbyoung",
+    "email": "wbyoung@fadingred.com"
+  },
+  "maintainers": [
+    {
+      "name": "wbyoung",
+      "email": "wbyoung@fadingred.com"
+    }
+  ],
+  "dist": {
+    "shasum": "59c540a6c141be714ffb294ecb9c53978f5c45af",
+    "tarball": "http://registry.npmjs.org/avn-nvm/-/avn-nvm-0.1.4.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/avn-nvm/-/avn-nvm-0.1.4.tgz"
+}

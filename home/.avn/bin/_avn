@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var fs = require('fs');
+var path = require('path');
+var avn = require('..');
+
+var hook = function(fn) {
+  return function() {
+    // set up stdcmd stream
+    try { process.stdcmd = fs.createWriteStream(null, { fd: 3 }); }
+    catch (e) { process.stdcmd = process.stderr; }
+
+    // setup colors based on program options
+    require('chalk').enabled = program.color;
+    fn.apply(this, arguments);
+  };
+};
+
+program
+  .version(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version)
+  .option('-v --verbose', 'run verbosely')
+  .option('-c --color', 'use colors (automatic for some commands)');
+
+program
+  .command('chpwd <path> [cd-arg]')
+  .description('eval actions for chpwd')
+  .action(hook(function(dir) {
+    avn.hooks.chpwd(path.resolve(dir),
+      { verbose: program.verbose }).done();
+  }));
+
+program
+  .command('explain <path>')
+  .description('show what will happen for a given path')
+  .action(function(dir) {
+    process.stdcmd = process.stderr;
+    avn.hooks.chpwd(path.resolve(dir),
+      { verbose: program.verbose }).done();
+  });
+
+program.parse(process.argv);
