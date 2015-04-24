@@ -43,6 +43,8 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'othree/html5.vim'
 
 " Colorschemes
 Plugin 'jonathanfilip/vim-lucius'
@@ -193,11 +195,10 @@ vnoremap <A-k> :m '<-2<CR>gv==gv
 " tmuxline
 let g:tmuxline_preset = {
       \'a'    : '#S',
-      \'b'    : '#W',
       \'win'  : '#I #W',
       \'cwin' : '#I #W',
       \'x'    : '%a',
-      \'y'    : '#W %R',
+      \'y'    : '%R',
       \'z'    : '#H'}
 
 " prevent window from scrolling when switching buffers
@@ -209,3 +210,5 @@ endif
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+au BufRead,BufNewFile *.ats setfiletype typescript
