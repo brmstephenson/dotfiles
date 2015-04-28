@@ -139,7 +139,7 @@ let g:jsx_ext_required = 0
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>' " change the default mapping
 let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
-set wildignore+=*/tmp*,*.so,*.swp,*.zip " exclude files and directories
+set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
 let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
 let g:ctrlp_show_hidden = 1 " index dotfiles 
 
@@ -212,3 +212,4 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 au BufRead,BufNewFile *.ats setfiletype typescript
+autocmd BufEnter * silent! lcd %:p:h
