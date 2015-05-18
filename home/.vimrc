@@ -45,6 +45,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/html5.vim'
+Plugin 'briancollins/vim-jst'
 
 " Colorschemes
 Plugin 'jonathanfilip/vim-lucius'
@@ -137,6 +138,7 @@ let g:jsx_ext_required = 0
 
 " ctrlp
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_working_path_mode = 'ra'            
 let g:ctrlp_map = '<c-p>' " change the default mapping
 let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
 set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
@@ -213,3 +215,4 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 au BufRead,BufNewFile *.ats setfiletype typescript
 autocmd BufEnter * silent! lcd %:p:h
+" set autochdir
