@@ -30,11 +30,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-bufferline'
 Plugin 'fatih/vim-go'
 " Plugin 'gerw/vim-HiLinkTrace'
+"
+Plugin 'SirVer/ultisnips'
 
 " Snipmate
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
+" Bundle 'MarcWeber/vim-addon-mw-utils'
+" Bundle 'tomtom/tlib_vim'
+" Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 
 " Syntax highlighters
@@ -142,7 +144,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<c-p>' " change the default mapping
 let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
 set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
-let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
+let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
 let g:ctrlp_show_hidden = 1 " index dotfiles 
 
 " nerdtree
