@@ -24,7 +24,7 @@ ZSH_THEME="tweed-master"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -32,7 +32,7 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -82,6 +82,15 @@ source $ZSH/oh-my-zsh.sh
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.bash_aliases"
+
+if [ -f ~/.cas_aliases ]; then
+  source "$HOME/.cas_aliases"
+fi
+
+if [ -f ~/.cas_env_varialbes ]; then
+  source ~/.cas_env_varialbes
+fi
+
 source "$HOME/.nvm/nvm.sh"
 
 source "$HOME/z.sh"

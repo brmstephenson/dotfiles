@@ -48,6 +48,9 @@ Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/html5.vim'
 Plugin 'briancollins/vim-jst'
+Plugin 'othree/yajs.vim'
+Plugin 'burnettk/vim-angular'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " Colorschemes
 Plugin 'jonathanfilip/vim-lucius'
@@ -58,14 +61,16 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'blerins/flattown'
 Plugin 'crusoexia/vim-monokai'
+Plugin 'yosiat/oceanic-next-vim'
 
 " All plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
 
-set background=light
-syntax on
 color lucius
+syntax on
+set background=light
+" set background=dark
 
 inoremap jk <ESC>
 
@@ -150,7 +155,7 @@ let g:ctrlp_show_hidden = 1 " index dotfiles
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
-" "git gutter (with railscasts)
+"git gutter (with railscasts)
 highlight SignColumn ctermbg=black
 highlight GitGutterAdd ctermbg=black
 highlight GitGutterChange ctermbg=black
