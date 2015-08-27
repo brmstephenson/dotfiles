@@ -1,0 +1,41 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Babel",
+		"Color Highlighter",
+		"ColorPicker",
+		"DocBlockr",
+		"Emmet",
+		"GitGutter-Edge",
+		"Google Spell Check",
+		"HTML Boilerplate",
+		"HTML5",
+		"HTMLAttributes",
+		"JavaScript Completions",
+		"JSHint",
+		"JSHint Gutter",
+		"LESS",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"Material Theme",
+		"nginx",
+		"Normalize Indentation",
+		"Oceanic Color Scheme",
+		"Oceanic Next Color Scheme",
+		"Package Control",
+		"QuickThemes",
+		"Search in Project",
+		"SideBarEnhancements",
+		"SideBarGit",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-annotations",
+		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-jscs",
+		"SublimeLinter-jshint",
+		"Vagrant"
+	]
+}
