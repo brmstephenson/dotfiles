@@ -29,6 +29,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-bufferline'
 Plugin 'fatih/vim-go'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
 " Plugin 'gerw/vim-HiLinkTrace'
 "
 Plugin 'SirVer/ultisnips'
@@ -204,8 +206,8 @@ vnoremap <A-k> :m '<-2<CR>gv==gv
 " tmuxline
 let g:tmuxline_preset = {
       \'a'    : '#S',
-      \'win'  : '#I #W',
-      \'cwin' : '#I #W',
+      \'win'  : '#I #W #F',
+      \'cwin' : '#I #W #F',
       \'x'    : '%a',
       \'y'    : '%R',
       \'z'    : '#H'}

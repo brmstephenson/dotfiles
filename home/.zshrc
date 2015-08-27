@@ -95,3 +95,6 @@ source "$HOME/.nvm/nvm.sh"
 
 source "$HOME/z.sh"
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/acb29/.gvm/bin/gvm-init.sh" ]] && source "/home/acb29/.gvm/bin/gvm-init.sh"
