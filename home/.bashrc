@@ -123,3 +123,12 @@ source "$HOME/z.sh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/acb29/.gvm/bin/gvm-init.sh" ]] && source "/home/acb29/.gvm/bin/gvm-init.sh"
+export JAVA_HOME=/usr/lib/jvm/java-6-oracle
+export JAVA_7_HOME=/usr/lib/jvm/java-7-oracle
+export MAVEN_OPTS="-XX:MaxPermSize=256m"
+export LANG=en_US.UTF-8
+export SCIFINDER_CAPI_HOST="capi.platform.cas.org"
+export SCIFINDER_CAPI_PORT="8080"
+export SCIFINDER_CAPI_PATH="casdrawjs/structures"
+export RIAK_HOST=192.168.1.162
+which git-ls-projects >/dev/null 2>/dev/null || export PATH=$PATH:/home/acb29/.cas-git-tools/bin
