@@ -38,12 +38,9 @@
 		".git",
 		".hg",
 		"CVS",
-		"node",
-		".tmp",
-		"dist",
-		"node_modules",
-		"bower_components"
+		"node"
 	],
+	"binary_file_patterns": ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip", "*/node_modules/*", "*/bower_components/*", "*/dist/*", "*/.tmp/*"],
 	"font_face": "Inconsolata for Powerline",
 	"font_size": 11,
 	"highlight_modified_tabs": true,
