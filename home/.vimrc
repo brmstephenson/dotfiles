@@ -17,6 +17,10 @@ Plugin 'bling/vim-airline'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'airblade/vim-gitgutter'
 
+" Autocomplete
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
+
 Plugin 'kien/ctrlp.vim' " Fuzzy file finder
 Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
@@ -33,24 +37,24 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 " Plugin 'gerw/vim-HiLinkTrace'
 "
-Plugin 'SirVer/ultisnips'
 
-" Snipmate
-" Bundle 'MarcWeber/vim-addon-mw-utils'
+" Snippets
 " Bundle 'tomtom/tlib_vim'
+" Bundle 'MarcWeber/vim-addon-mw-utils'
 " Bundle 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 
 " Syntax highlighters
 Plugin 'pangloss/vim-javascript'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'jelera/vim-javascript-syntax'
+" Plugin 'jelera/vim-javascript-syntax'
 Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/html5.vim'
-Plugin 'briancollins/vim-jst'
-Plugin 'othree/yajs.vim'
+" Plugin 'briancollins/vim-jst'
+" Plugin 'othree/yajs.vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
@@ -130,19 +134,19 @@ set number		 " show line numbers
 set nowrap		 " do not wrap lines
 set tabstop=2		 " a tab is 2 spaces
 set autoindent		 " always set autoindenting on
-set number		 " show the line numbers
 set shiftwidth=2	 " set number of spaces to use for autoindenting
 set expandtab
 set smarttab
 
 set autoread      " set to auto read when a file is changed from the outside
-"set showmatch     " set matching brackets when text indicator is over them
+" set showmatch     " set matching brackets when text indicator is over them
 
 " airline
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='powerlineish'
 
+" a .jsx file is not required jsx syntax highlighting
 let g:jsx_ext_required = 0
 
 " ctrlp
@@ -181,6 +185,18 @@ nnoremap <C-H> <C-W><C-H>
 " close syntastic error window by deleting buffer
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd lclose\|bdelete
+
+" Don't show autocomplete split
+set completeopt-=preview
+
+" Change snipmate so it does not use tab by default
+" imap <C-J> <Plug>snipMateNextOrTrigger
+" smap <C-J> <Plug>snipMateNextOrTrigger
+
+" Change utilsnips so it does not use tab by default
+let g:UltiSnipsExpandTrigger="<C-J>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<C-Z>"
 
 " allows me to use Alt key
 " http://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim
