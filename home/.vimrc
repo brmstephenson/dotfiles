@@ -34,7 +34,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-bufferline'
 Plugin 'fatih/vim-go'
 " Plugin 'gerw/vim-HiLinkTrace'
-"
 
 " Snippets
 " Bundle 'tomtom/tlib_vim'
@@ -101,8 +100,14 @@ map <leader>g :e#<cr>
 " list buffers
 map <leader>l :ls<cr>
 
+set hlsearch
+set incsearch
+
 " clear highlighting with , + /
 nmap <silent> ,/ :nohlsearch<CR>
+
+" prevent buffers from showing up in the command line
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " easily swithc between buffers 1-10
 nnoremap <leader>1 :1b<cr>
@@ -123,10 +128,11 @@ while c <= 99
   let c += 1
 endwhile
 
-nnoremap <F10> :b <C-Z>
-
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
+
+"open the buffer list
+nnoremap <F10> :b <C-Z>
 
 set number		 " show line numbers
 set nowrap		 " do not wrap lines
@@ -155,6 +161,8 @@ let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
 set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
 let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
 let g:ctrlp_show_hidden = 1 " index dotfiles 
+
+nnoremap <F9> :set number!<cr>
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -209,6 +217,8 @@ unlet c
 
 set timeout ttimeoutlen=50
 
+set completeopt-=preview
+
 " move lines up or down easier
 nnoremap <A-j> :m .+1<CR>
 nnoremap <A-k> :m .-2<CR>
@@ -232,7 +242,7 @@ if v:version >= 700
   au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 endif
 
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+map <F11> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 

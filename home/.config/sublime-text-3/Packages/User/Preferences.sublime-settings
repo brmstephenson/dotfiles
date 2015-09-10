@@ -1,4 +1,24 @@
 {
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*/node_modules/*",
+		"*/bower_components/*",
+		"*/dist/*",
+		"*/.tmp/*"
+	],
 	"color_scheme": "Packages/User/SublimeLinter/Oceanic Next (SL).tmTheme",
 	"default_line_ending": "unix",
 	"draw_white_space": "all",
@@ -40,14 +60,14 @@
 		"CVS",
 		"node"
 	],
-	"binary_file_patterns": ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip", "*/node_modules/*", "*/bower_components/*", "*/dist/*", "*/.tmp/*"],
 	"font_face": "Inconsolata for Powerline",
 	"font_size": 11,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Markdown",
-		"Vintage"
+		"JavaScript",
+		"Vintage",
+		"Markdown"
 	],
 	"rulers":
 	[
