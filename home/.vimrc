@@ -21,18 +21,16 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 
-Plugin 'kien/ctrlp.vim' " Fuzzy file finder
-Plugin 'tpope/vim-fugitive'
-Plugin 'mattn/emmet-vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'ervandew/supertab'
+Plugin 'kien/ctrlp.vim' " fuzzy file finder
+Plugin 'tpope/vim-fugitive' " Git wrapper
+Plugin 'mattn/emmet-vim' " improves HTML & CSS workflow
+Plugin 'tpope/vim-commentary' " comment stuff out
+Plugin 'ervandew/supertab' " perform all your vim inster mode completions with Tab
 Plugin 'scrooloose/syntastic' " Checks for syntax errors
-Plugin 'tpope/vim-surround'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-bufferline'
-Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-surround' " quoting/parenthesizing made simple
+Plugin 'godlygeek/tabular' " vim script for text filtering and alignment
+Plugin 'scrooloose/nerdtree' " file tree explorer
+Plugin 'bling/vim-bufferline' " show bufferes in the command bar
 " Plugin 'gerw/vim-HiLinkTrace'
 
 " Snippets
@@ -43,6 +41,7 @@ Plugin 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 
 " Syntax highlighters
+Plugin 'plasticboy/vim-markdown' 
 Plugin 'pangloss/vim-javascript'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -54,6 +53,7 @@ Plugin 'othree/html5.vim'
 " Plugin 'othree/yajs.vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'fatih/vim-go'
 
 " Colorschemes
 Plugin 'jonathanfilip/vim-lucius'
