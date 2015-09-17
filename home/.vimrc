@@ -31,6 +31,7 @@ Plugin 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plugin 'godlygeek/tabular' " vim script for text filtering and alignment
 Plugin 'scrooloose/nerdtree' " file tree explorer
 Plugin 'bling/vim-bufferline' " show bufferes in the command bar
+Plugin 'editorconfig/editorconfig-vim' " editor config plugin
 " Plugin 'gerw/vim-HiLinkTrace'
 
 " Snippets
