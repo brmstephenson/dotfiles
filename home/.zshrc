@@ -47,7 +47,7 @@ ZSH_CUSTOM=$HOME/.zsh_custom/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux common-aliases compleat dircycle dirhistory gitfast git-extras chucknorris colorize)
+plugins=(tmux common-aliases compleat dircycle dirhistory gitfast git-extras chucknorris colorize thefuck)
 
 source $ZSH/oh-my-zsh.sh
 
