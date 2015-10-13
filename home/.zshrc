@@ -88,8 +88,8 @@ if [ -f ~/.cas_aliases ]; then
   source "$HOME/.cas_aliases"
 fi
 
-if [ -f ~/.cas_env_varialbes ]; then
-  source ~/.cas_env_varialbes
+if [ -f ~/.cas_env_variables ]; then
+  source "$HOME/.cas_env_variables"
 fi
 
 source "$HOME/.nvm/nvm.sh"

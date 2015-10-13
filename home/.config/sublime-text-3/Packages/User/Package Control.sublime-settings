@@ -1,4 +1,5 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
@@ -21,7 +22,9 @@
 		"LESS",
 		"Markdown Preview",
 		"MarkdownEditing",
+		"Material Color Scheme",
 		"Material Theme",
+		"Material Theme - White Panels",
 		"nginx",
 		"Normalize Indentation",
 		"Oceanic Color Scheme",

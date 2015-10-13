@@ -25,134 +25,6 @@
 	<string>oceanic.next.dark</string>
 	<key>settings</key>
 	<array>
-<dict>
-<key>name</key>
-<string>mon_color</string>
-<key>scope</key>
-<string>mcol_FF0000FF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#FF0000FF</string>
-<key>foreground</key>
-<string>#4C0000FF</string>
-<key>caret</key>
-<string>#4C0000FF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_text_color</string>
-<key>scope</key>
-<string>mcol_text_FF0000FF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#1B2B35FF</string>
-<key>foreground</key>
-<string>#FF0000FF</string>
-<key>caret</key>
-<string>#4C0000FF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_color</string>
-<key>scope</key>
-<string>mcol_008000FF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#008000FF</string>
-<key>foreground</key>
-<string>#7FFF7FFF</string>
-<key>caret</key>
-<string>#7FFF7FFF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_text_color</string>
-<key>scope</key>
-<string>mcol_text_008000FF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#1B2B35FF</string>
-<key>foreground</key>
-<string>#008000FF</string>
-<key>caret</key>
-<string>#7FFF7FFF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_color</string>
-<key>scope</key>
-<string>mcol_11000000</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#11000000</string>
-<key>foreground</key>
-<string>#FFEEEEFF</string>
-<key>caret</key>
-<string>#FFEEEEFF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_text_color</string>
-<key>scope</key>
-<string>mcol_text_11000000</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#1B2B35FF</string>
-<key>foreground</key>
-<string>#11000000</string>
-<key>caret</key>
-<string>#FFEEEEFF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_color</string>
-<key>scope</key>
-<string>mcol_FFA500FF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#FFA500FF</string>
-<key>foreground</key>
-<string>#4C3100FF</string>
-<key>caret</key>
-<string>#4C3100FF</string>
-</dict>
-</dict>
-
-<dict>
-<key>name</key>
-<string>mon_text_color</string>
-<key>scope</key>
-<string>mcol_text_FFA500FF</string>
-<key>settings</key>
-<dict>
-<key>background</key>
-<string>#1B2B35FF</string>
-<key>foreground</key>
-<string>#FFA500FF</string>
-<key>caret</key>
-<string>#4C3100FF</string>
-</dict>
-</dict>
-
 		<dict>
 			<key>settings</key>
 			<dict>
@@ -207,7 +79,7 @@
 			<key>name</key>
 			<string>Operator, Misc</string>
 			<key>scope</key>
-			<string>keyword.operator, constant.other.color, punctuation, meta.tag, punctuation.definition.tag, punctuation.separator.inheritance.php, punctuation.definition.tag.html, punctuation.definition.tag.begin.html, punctuation.definition.tag.end.html</string>
+			<string>keyword.operator, constant.other.color, punctuation, meta.tag, punctuation.definition.tag, punctuation.separator.inheritance.php, punctuation.definition.tag.html, punctuation.definition.tag.begin.html, punctuation.definition.tag.end.html, punctuation.section.embedded, keyword.other.template, keyword.other.substitution</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -229,7 +101,7 @@
 			<key>name</key>
 			<string>Function, Special Method, Block Level</string>
 			<key>scope</key>
-			<string>entity.name.function, meta.function-call, support.function, keyword.other.special-method, meta.block-level</string>
+			<string>entity.name.function, meta.function-call, variable.function, support.function, keyword.other.special-method, meta.block-level</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -251,7 +123,7 @@
 			<key>name</key>
 			<string>Number, Constant, Function Argument, Tag Attribute, Embedded</string>
 			<key>scope</key>
-			<string>constant.numeric, constant.language, support.constant, constant.character, variable.parameter, punctuation.section.embedded, keyword.other.unit</string>
+			<string>constant.numeric, constant.language, support.constant, constant.character, variable.parameter, keyword.other.unit</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -321,11 +193,11 @@
 			<key>name</key>
 			<string>meta.method.js</string>
 			<key>scope</key>
-			<string>meta.method.js</string>
+			<string>meta.method.js entity.name.function.js, variable.function.constructor</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#fff</string>
+				<string>#D8DEE9</string>
 			</dict>
 		</dict>
 		<dict>
@@ -455,13 +327,13 @@
 		</dict>
 	<dict>
             <key>name</key>
-            <string>SublimeLinter Error</string>
+            <string>SublimeLinter Warning</string>
             <key>scope</key>
-            <string>sublimelinter.mark.error</string>
+            <string>sublimelinter.mark.warning</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#D02000</string>
+                <string>#DDB700</string>
             </dict>
         </dict><dict>
             <key>name</key>
@@ -475,13 +347,13 @@
             </dict>
         </dict><dict>
             <key>name</key>
-            <string>SublimeLinter Warning</string>
+            <string>SublimeLinter Error</string>
             <key>scope</key>
-            <string>sublimelinter.mark.warning</string>
+            <string>sublimelinter.mark.error</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#DDB700</string>
+                <string>#D02000</string>
             </dict>
         </dict></array>
 	<key>uuid</key>

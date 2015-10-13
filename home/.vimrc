@@ -55,6 +55,10 @@ Plugin 'othree/html5.vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'fatih/vim-go'
+" Plugin 'wookiehangover/jshint.vim'
+
+" Plugin 'ElmCast/elm-vim'
+Plugin 'lambdatoast/elm.vim'
 
 " Colorschemes
 Plugin 'jonathanfilip/vim-lucius'
@@ -84,7 +88,7 @@ set encoding=utf-8        " necessary to show unicode glyps
 
 let mapleader=","
 
-" 'mxw/vim-jsx' do not require *.jxs extension to highlight jsx code
+" 'mxw/vim-jsx' does not require *.jxs extension to highlight jsx code
 let g:jsx_ext_required = 0
 
 " allow buffers to be hidden instead of closing
@@ -192,6 +196,8 @@ nnoremap <C-H> <C-W><C-H>
 " close syntastic error window by deleting buffer
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd lclose\|bdelete
+
+autocmd FileType javascript let b:syntastic_checkers = ['jshint', 'jscs', 'eslint']
 
 " Don't show autocomplete split
 set completeopt-=preview

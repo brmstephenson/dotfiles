@@ -66,8 +66,9 @@
 	"ignored_packages":
 	[
 		"JavaScript",
-		"Vintage",
-		"Markdown"
+		"Markdown",
+		"SublimeLinter-annotations",
+		"Vintage"
 	],
 	"rulers":
 	[
