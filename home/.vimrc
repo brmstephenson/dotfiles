@@ -197,7 +197,23 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd lclose\|bdelete
 
-autocmd FileType javascript let b:syntastic_checkers = ['jshint', 'jscs', 'eslint']
+
+function! JavascriptLinters()
+  let checkers = []
+  let eslint = findfile('.eslintrc', '.;') != '' ? add(checkers, 'eslint') : ''
+  let jscs = findfile('.jscsrc', '.;') != '' ? add(checkers, 'jscs') : ''
+  let jshint = findfile('.jshintrc', '.;') != '' ? add(checkers, 'jshint') : ''
+
+  return checkers
+
+endfunction
+
+" call JavascriptLinters(getcwd() . "/")
+
+" autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;') != '' ? ['jscs', 'jshint'] : ['jshint']
+" autocmd FileType javascript let b:syntastic_checkers = ['jshint', 'jscs', 'eslint']
+" autocmd FileType javascript let b:syntastic_checkers = JavascriptLinters(getcwd() . "/")
+let g:syntastic_javascript_checkers=JavascriptLinters()
 
 " Don't show autocomplete split
 set completeopt-=preview
