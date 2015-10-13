@@ -208,11 +208,7 @@ function! JavascriptLinters()
 
 endfunction
 
-" call JavascriptLinters(getcwd() . "/")
-
-" autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;') != '' ? ['jscs', 'jshint'] : ['jshint']
-" autocmd FileType javascript let b:syntastic_checkers = ['jshint', 'jscs', 'eslint']
-" autocmd FileType javascript let b:syntastic_checkers = JavascriptLinters(getcwd() . "/")
+" https://github.com/scrooloose/syntastic/issues/974#issuecomment-73837549
 let g:syntastic_javascript_checkers=JavascriptLinters()
 
 " Don't show autocomplete split
