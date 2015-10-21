@@ -268,3 +268,5 @@ map <F11> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 au BufRead,BufNewFile *.ats setfiletype typescript
 autocmd BufEnter * silent! lcd %:p:h
 " set autochdir
+"
+map  <F7> <Esc>:echo expand('%:p')<Return>
