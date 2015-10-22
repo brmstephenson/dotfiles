@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
 export ELM_HOME="$(which elm)"
 
 # Set name of the theme to load.
@@ -83,6 +84,12 @@ source $ZSH/oh-my-zsh.sh
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.bash_aliases"
+source "$HOME/.nvm/nvm.sh"
+source "$HOME/z.sh"
+
+if [[ -s "$HOME/.avn/bin/avn.sh" ]]; then
+  source "$HOME/.avn/bin/avn.sh" # load avn
+fi
 
 if [ -f ~/.cas_aliases ]; then
   source "$HOME/.cas_aliases"
@@ -92,10 +99,6 @@ if [ -f ~/.cas_env_variables ]; then
   source "$HOME/.cas_env_variables"
 fi
 
-source "$HOME/.nvm/nvm.sh"
-
-source "$HOME/z.sh"
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
+export LESS="-R -F -X"
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/acb29/.gvm/bin/gvm-init.sh" ]] && source "/home/acb29/.gvm/bin/gvm-init.sh"
