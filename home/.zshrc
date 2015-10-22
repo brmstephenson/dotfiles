@@ -48,7 +48,7 @@ ZSH_CUSTOM=$HOME/.zsh_custom/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux common-aliases compleat dircycle dirhistory gitfast git-extras chucknorris colorize thefuck)
+plugins=(gulp tmux common-aliases compleat dircycle dirhistory gitfast git-extras chucknorris colorize thefuck docker-compose docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,6 +99,15 @@ if [ -f ~/.cas_env_variables ]; then
   source "$HOME/.cas_env_variables"
 fi
 
+source "$HOME/.nvm/nvm.sh"
+
+source "$HOME/z.sh"
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
 export LESS="-R -F -X"
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/acb29/.gvm/bin/gvm-init.sh" ]] && source "/home/acb29/.gvm/bin/gvm-init.sh"
