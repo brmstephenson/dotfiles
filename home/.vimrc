@@ -42,7 +42,7 @@ Plugin 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 
 " Syntax highlighters
-Plugin 'plasticboy/vim-markdown' 
+Plugin 'plasticboy/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -160,12 +160,12 @@ let g:jsx_ext_required = 0
 
 " ctrlp
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_working_path_mode = 'ra'            
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<c-p>' " change the default mapping
 let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
 set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
 let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
-let g:ctrlp_show_hidden = 1 " index dotfiles 
+let g:ctrlp_show_hidden = 1 " index dotfiles
 
 nnoremap <F9> :set number!<cr>
 
