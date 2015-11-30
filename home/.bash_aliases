@@ -10,3 +10,5 @@ alias gd='git diff'
 alias gpr='git pull --rebase'
 
 unalias rm
+
+alias npmexec='PATH=$(npm bin):$PATH'
