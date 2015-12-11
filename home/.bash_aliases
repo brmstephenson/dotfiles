@@ -12,3 +12,7 @@ alias gpr='git pull --rebase'
 unalias rm
 
 alias npmexec='PATH=$(npm bin):$PATH'
+
+alias webpack='npm-exec webpack'
+alias gulp='npm-exec gulp'
+alias http-server='npm-exec http-server'

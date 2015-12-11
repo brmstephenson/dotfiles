@@ -32,6 +32,7 @@ Plugin 'godlygeek/tabular' " vim script for text filtering and alignment
 Plugin 'scrooloose/nerdtree' " file tree explorer
 Plugin 'bling/vim-bufferline' " show bufferes in the command bar
 Plugin 'editorconfig/editorconfig-vim' " editor config plugin
+Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'gerw/vim-HiLinkTrace'
 
 " Snippets
@@ -88,7 +89,7 @@ set encoding=utf-8        " necessary to show unicode glyps
 
 let mapleader=","
 
-" 'mxw/vim-jsx' does not require *.jxs extension to highlight jsx code
+" 'mxw/vim-jsx' does not require *.jsx extension to highlight jsx code
 let g:jsx_ext_required = 0
 
 " allow buffers to be hidden instead of closing
@@ -104,6 +105,9 @@ map <leader>g :e#<cr>
 
 " list buffers
 map <leader>l :ls<cr>
+
+" refresh all buffers
+map <leader>r :bufdo checktime
 
 set hlsearch
 set incsearch
@@ -170,7 +174,8 @@ let g:ctrlp_show_hidden = 1 " index dotfiles
 nnoremap <F9> :set number!<cr>
 
 " nerdtree
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
+nnoremap <leader><C-n> :NERDTreeToggle<CR>
 
 "git gutter (with railscasts)
 highlight SignColumn ctermbg=black
