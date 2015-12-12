@@ -9,6 +9,8 @@ alias gl='git log'
 alias gd='git diff'
 alias gpr='git pull --rebase'
 
+alias dsar='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
+
 unalias rm
 
 alias npmexec='PATH=$(npm bin):$PATH'
