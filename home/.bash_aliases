@@ -15,6 +15,7 @@ unalias rm
 
 alias npmexec='PATH=$(npm bin):$PATH'
 
-alias webpack='npm-exec webpack'
-alias gulp='npm-exec gulp'
-alias http-server='npm-exec http-server'
+alias webpack='npmexec webpack'
+alias gulp='npmexec gulp'
+alias http-server='npmexec http-server'
+alias karma='npmexec karma'
