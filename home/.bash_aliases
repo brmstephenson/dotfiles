@@ -19,3 +19,5 @@ alias webpack='npmexec webpack'
 alias gulp='npmexec gulp'
 alias http-server='npmexec http-server'
 alias karma='npmexec karma'
+
+alias fix="git diff --name-only | uniq | xargs vim"
