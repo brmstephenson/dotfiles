@@ -84,8 +84,7 @@ source $ZSH/oh-my-zsh.sh
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.bash_aliases"
-source "$HOME/.nvm/nvm.sh"
-source "$HOME/z.sh"
+source "$HOME/.helper_functions"
 
 if [[ -s "$HOME/.avn/bin/avn.sh" ]]; then
   source "$HOME/.avn/bin/avn.sh" # load avn

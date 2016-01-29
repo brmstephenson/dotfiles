@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set_current_project() {
+  echo 'export CURRENT_PROJECT='"$PWD" > "$HOME/.current_project"
+}
+
+jk() {
+  if [ -f "$HOME/.current_project" ] 
+    then
+      source "$HOME/.current_project"
+      cd "$CURRENT_PROJECT/"
+  fi
+}
+

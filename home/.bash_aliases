@@ -1,3 +1,5 @@
+#!/bin/bash
+
 alias tmux='tmux -2'
 alias ..="cd .."
 alias ...="cd ../.."
@@ -11,7 +13,7 @@ alias gpr='git pull --rebase'
 
 alias dsar='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 
-unalias rm
+unalias rm 2>/dev/null
 
 alias npmexec='PATH=$(npm bin):$PATH'
 
