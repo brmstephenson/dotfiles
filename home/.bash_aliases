@@ -23,3 +23,4 @@ alias http-server='npmexec http-server'
 alias karma='npmexec karma'
 
 alias fix="git diff --name-only | uniq | xargs vim"
+alias nr='npm run'

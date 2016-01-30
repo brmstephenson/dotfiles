@@ -275,3 +275,7 @@ autocmd BufEnter * silent! lcd %:p:h
 " set autochdir
 "
 map  <F7> <Esc>:echo expand('%:p')<Return>
+
+"copy file and then when saving overwrite the original
+" this helps with file watchers in Linux when using vim
+set backupcopy=yes
