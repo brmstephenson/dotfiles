@@ -71,6 +71,7 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'blerins/flattown'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'yosiat/oceanic-next-vim'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -175,7 +176,7 @@ nnoremap <F9> :set number!<cr>
 
 " nerdtree
 " map <C-n> :NERDTreeToggle<CR>
-nnoremap <leader><C-n> :NERDTreeToggle<CR>
+map <C-i> :NERDTreeToggle<CR>
 
 "git gutter (with railscasts)
 highlight SignColumn ctermbg=black
