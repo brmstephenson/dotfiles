@@ -57,6 +57,7 @@ Plugin 'burnettk/vim-angular'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'fatih/vim-go'
 " Plugin 'wookiehangover/jshint.vim'
+Plugin 'geoffharcourt/vim-matchit'
 
 " Plugin 'ElmCast/elm-vim'
 Plugin 'lambdatoast/elm.vim'
