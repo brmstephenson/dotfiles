@@ -57,7 +57,7 @@ Plugin 'burnettk/vim-angular'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'fatih/vim-go'
 " Plugin 'wookiehangover/jshint.vim'
-Plugin 'geoffharcourt/vim-matchit'
+Plugin 'moskytw/nginx-contrib-vim'
 
 " Plugin 'ElmCast/elm-vim'
 Plugin 'lambdatoast/elm.vim'
@@ -109,7 +109,7 @@ map <leader>g :e#<cr>
 map <leader>l :ls<cr>
 
 " refresh all buffers
-map <leader>r :bufdo checktime
+map <leader>r :bufdo checktime<cr>
 
 set hlsearch
 set incsearch
@@ -163,6 +163,8 @@ let g:airline_theme='powerlineish'
 
 " a .jsx file is not required jsx syntax highlighting
 let g:jsx_ext_required = 0
+
+runtime! macros/matchit.vim
 
 " ctrlp
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
