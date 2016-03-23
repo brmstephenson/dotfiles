@@ -18,9 +18,12 @@ unalias rm 2>/dev/null
 alias npmexec='PATH=$(npm bin):$PATH'
 
 alias webpack='npmexec webpack'
+alias webpack-dev-server='npmexec webpack-dev-server'
 alias gulp='npmexec gulp'
 alias http-server='npmexec http-server'
 alias karma='npmexec karma'
+alias babel-node='npmexec babel-node'
+alias nodemon='npmexec nodemon'
 
 alias fix="git diff --name-only | uniq | xargs vim"
 alias nr='npm run'
