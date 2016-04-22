@@ -132,4 +132,3 @@ export SCIFINDER_CAPI_PORT="8080"
 export SCIFINDER_CAPI_PATH="casdrawjs/structures"
 export RIAK_HOST=192.168.1.162
 which git-ls-projects >/dev/null 2>/dev/null || export PATH=$PATH:/home/acb29/.cas-git-tools/bin
-eval $(thefuck --alias)

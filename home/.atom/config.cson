@@ -1,0 +1,16 @@
+"*":
+  core:
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+  editor:
+    fontFamily: "Droid Sans Mono"
+    invisibles: {}
+  "exception-reporting":
+    userId: "195aa9f9-25f7-08e5-7ad8-db426427ef14"
+  fonts:
+    fontFamily: "Inconsolata"
+    preview: "This is a test"
+  welcome:
+    showOnStartup: false

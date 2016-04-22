@@ -33,6 +33,7 @@ Plugin 'scrooloose/nerdtree' " file tree explorer
 Plugin 'bling/vim-bufferline' " show bufferes in the command bar
 Plugin 'editorconfig/editorconfig-vim' " editor config plugin
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'qpkorr/vim-bufkill'
 " Plugin 'gerw/vim-HiLinkTrace'
 
 " Snippets

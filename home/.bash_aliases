@@ -7,7 +7,8 @@ alias ....="cd ../../.."
 alias hostip="ifconfig wlan0 | grep inet | grep -v inet6 | awk '{ print \$2 }' | sed s/addr\://"
 
 alias gs='git status'
-alias gl='git log'
+alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias glog='git log'
 alias gd='git diff'
 alias gpr='git pull --rebase'
 
@@ -24,6 +25,7 @@ alias http-server='npmexec http-server'
 alias karma='npmexec karma'
 alias babel-node='npmexec babel-node'
 alias nodemon='npmexec nodemon'
+alias eslint='npmexec eslint'
 
 alias fix="git diff --name-only | uniq | xargs vim"
 alias nr='npm run'
