@@ -1,4 +1,5 @@
 set nocompatible
+set backspace=2
 filetype off
 
 " clone Vundle directory if it doesn't already exist
@@ -41,7 +42,7 @@ Plugin 'qpkorr/vim-bufkill'
 " Bundle 'MarcWeber/vim-addon-mw-utils'
 " Bundle 'garbas/vim-snipmate'
 Plugin 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 " Syntax highlighters
 Plugin 'plasticboy/vim-markdown'
@@ -161,9 +162,6 @@ set autoread      " set to auto read when a file is changed from the outside
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='powerlineish'
-
-" a .jsx file is not required jsx syntax highlighting
-let g:jsx_ext_required = 0
 
 runtime! macros/matchit.vim
 
