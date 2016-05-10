@@ -49,16 +49,15 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'mxw/vim-jsx'
+Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/html5.vim'
-" Plugin 'briancollins/vim-jst'
-" Plugin 'othree/yajs.vim'
-Plugin 'burnettk/vim-angular'
+" Plugin 'burnettk/vim-angular'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'fatih/vim-go'
 " Plugin 'wookiehangover/jshint.vim'
 Plugin 'moskytw/nginx-contrib-vim'
+Plugin 'elzr/vim-json'
 
 " Plugin 'ElmCast/elm-vim'
 " Plugin 'lambdatoast/elm.vim'
@@ -282,7 +281,9 @@ map <F11> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 au BufRead,BufNewFile *.ats setfiletype typescript
 autocmd BufEnter * silent! lcd %:p:h
 " set autochdir
-"
+
+au BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc setfiletype json
+
 map  <F7> <Esc>:echo expand('%:p')<Return>
 
 "copy file and then when saving overwrite the original
