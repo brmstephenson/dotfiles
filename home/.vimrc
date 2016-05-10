@@ -61,7 +61,7 @@ Plugin 'fatih/vim-go'
 Plugin 'moskytw/nginx-contrib-vim'
 
 " Plugin 'ElmCast/elm-vim'
-Plugin 'lambdatoast/elm.vim'
+" Plugin 'lambdatoast/elm.vim'
 
 " Colorschemes
 Plugin 'jonathanfilip/vim-lucius'

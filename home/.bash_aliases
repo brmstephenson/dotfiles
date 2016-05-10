@@ -26,6 +26,7 @@ alias karma='npmexec karma'
 alias babel-node='npmexec babel-node'
 alias nodemon='npmexec nodemon'
 alias eslint='npmexec eslint'
+alias tsc='npmexec tsc'
 
 alias fix="git diff --name-only | uniq | xargs vim"
 alias nr='npm run'

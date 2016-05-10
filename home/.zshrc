@@ -110,3 +110,7 @@ export LESS="-R -F -X"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/acb29/.gvm/bin/gvm-init.sh" ]] && source "/home/acb29/.gvm/bin/gvm-init.sh"
+
+export SDKMAN_DIR="/home/acb29/.sdkman"
+[[ -s "/home/acb29/.sdkman/bin/sdkman-init.sh" ]] && source "/home/acb29/.sdkman/bin/sdkman-init.sh"
+
