@@ -49,7 +49,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'jelera/vim-javascript-syntax'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'othree/html5.vim'
 " Plugin 'briancollins/vim-jst'
@@ -175,6 +175,7 @@ let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
 set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
 let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
 let g:ctrlp_show_hidden = 1 " index dotfiles
+let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 
 nnoremap <F9> :set number!<cr>
 
@@ -284,3 +285,16 @@ map  <F7> <Esc>:echo expand('%:p')<Return>
 "copy file and then when saving overwrite the original
 " this helps with file watchers in Linux when using vim
 set backupcopy=yes
+
+The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects
+  .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
