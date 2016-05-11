@@ -30,7 +30,7 @@ Plugin 'ervandew/supertab' " perform all your vim inster mode completions with T
 Plugin 'scrooloose/syntastic' " Checks for syntax errors
 Plugin 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plugin 'godlygeek/tabular' " vim script for text filtering and alignment
-Plugin 'scrooloose/nerdtree' " file tree explorer
+" Plugin 'scrooloose/nerdtree' " file tree explorer
 Plugin 'bling/vim-bufferline' " show bufferes in the command bar
 Plugin 'editorconfig/editorconfig-vim' " editor config plugin
 Plugin 'terryma/vim-multiple-cursors'
@@ -81,43 +81,51 @@ filetype plugin indent on
 
 color lucius
 syntax on
-set background=light
-" set background=dark
-
-inoremap jk <ESC>
-
-set pastetoggle=<F12>     " sane indentations when pasting
-set cursorline
-set encoding=utf-8        " necessary to show unicode glyps
 
 let mapleader=","
+inoremap jk <ESC>
+
+set pastetoggle=<F12> " sane indentations when pasting
+set cursorline        " highlight entire row that contains the cursor
+set encoding=utf-8    " necessary to show unicode glyps
+set backupcopy=yes    " copy file and then when saving overwrite the origin; helps with file watchers on Linux
+set background=light
+set hidden            " allow buffers to be hidden instead of closing
+set hlsearch
+set incsearch
+set wildchar=<Tab> wildmenu wildmode=full
+set wildcharm=<C-Z>
+set number		 " show line numbers
+set nowrap		 " do not wrap lines
+set tabstop=2		 " a tab is 2 spaces
+set autoindent		 " always set autoindenting on
+set shiftwidth=2	 " set number of spaces to use for autoindenting
+set expandtab
+set smarttab
+set completeopt-=preview " Don't show autocomplete split
+set autoread      " set to auto read when a file is changed from the outside
+set showmatch     " set matching brackets when text indicator is over them
+set timeout ttimeoutlen=50
+
+
+" airline
+set laststatus=2
+let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
 
 " 'mxw/vim-jsx' does not require *.jsx extension to highlight jsx code
 let g:jsx_ext_required = 0
-
-" allow buffers to be hidden instead of closing
-set hidden
 
 " buffer naviation
 map <leader>n :bn<cr>
 map <leader>p :bp<cr>
 map <leader>d :bd<cr>
-
 " switch to previously used buffer
 map <leader>g :e#<cr>
-
 " list buffers
 map <leader>l :ls<cr>
-
-
 " refresh all buffers
 map <leader>r :bufdo checktime<cr>
-
-set hlsearch
-set incsearch
-
-" clear highlighting with , + /
-nmap <silent> ,/ :nohlsearch<CR>
 
 " prevent buffers from showing up in the command line
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -141,42 +149,17 @@ while c <= 99
   let c += 1
 endwhile
 
-set wildchar=<Tab> wildmenu wildmode=full
-set wildcharm=<C-Z>
-
-"open the buffer list
-nnoremap <F10> :b <C-Z>
-
-set number		 " show line numbers
-set nowrap		 " do not wrap lines
-set tabstop=2		 " a tab is 2 spaces
-set autoindent		 " always set autoindenting on
-set shiftwidth=2	 " set number of spaces to use for autoindenting
-set expandtab
-set smarttab
-
-set autoread      " set to auto read when a file is changed from the outside
-" set showmatch     " set matching brackets when text indicator is over them
-
-" airline
-set laststatus=2
-let g:airline_powerline_fonts=1
-let g:airline_theme='powerlineish'
-
-runtime! macros/matchit.vim
-
-" ctrlp
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_map = '<C-p>' " change the default mapping
 let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
 set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
 let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
 let g:ctrlp_show_hidden = 1 " index dotfiles
 let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
+map <leader>o :CtrlPRoot<cr>
 
-map <C-p> <leader>o .<cr>
-
+" toggle line numbers
 nnoremap <F9> :set number!<cr>
 
 " nerdtree
@@ -212,6 +195,7 @@ cabbrev <silent> bd lclose\|bdelete
 function! JavascriptLinters()
   let checkers = []
   let eslint = findfile('.eslintrc', '.;') != '' ? add(checkers, 'eslint') : ''
+  let eslintjson = findfile('.eslint.json', '.;') !='' ? add(checkers, 'eslint') : ''
   let jscs = findfile('.jscsrc', '.;') != '' ? add(checkers, 'jscs') : ''
   let jshint = findfile('.jshintrc', '.;') != '' ? add(checkers, 'jshint') : ''
 
@@ -222,8 +206,6 @@ endfunction
 " https://github.com/scrooloose/syntastic/issues/974#issuecomment-73837549
 let g:syntastic_javascript_checkers=JavascriptLinters()
 
-" Don't show autocomplete split
-set completeopt-=preview
 
 " Change snipmate so it does not use tab by default
 " imap <C-J> <Plug>snipMateNextOrTrigger
@@ -245,9 +227,6 @@ while c <= 'z'
 endw
 unlet c
 
-set timeout ttimeoutlen=50
-
-set completeopt-=preview
 
 " move lines up or down easier
 nnoremap <A-j> :m .+1<CR>
@@ -278,15 +257,10 @@ map <F11> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 au BufRead,BufNewFile *.ats setfiletype typescript
 autocmd BufEnter * silent! lcd %:p:h
-" set autochdir
 
 au BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc setfiletype json
 
-map  <F7> <Esc>:echo expand('%:p')<Return>
-
-"copy file and then when saving overwrite the original
-" this helps with file watchers in Linux when using vim
-set backupcopy=yes
+map <F7> <Esc>:echo expand('%:p')<Return>
 
 " The Silver Searcher
 if executable('ag')
