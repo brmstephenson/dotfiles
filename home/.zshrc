@@ -114,3 +114,7 @@ export LESS="-R -F -X"
 export SDKMAN_DIR="/home/acb29/.sdkman"
 [[ -s "/home/acb29/.sdkman/bin/sdkman-init.sh" ]] && source "/home/acb29/.sdkman/bin/sdkman-init.sh"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='ag -g ""'
