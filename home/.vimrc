@@ -130,6 +130,42 @@ while c <= 99
 endwhile
 
 map <C-p> :FZF<cr>
+set wildchar=<Tab> wildmenu wildmode=full
+set wildcharm=<C-Z>
+
+"open the buffer list
+nnoremap <F10> :b <C-Z>
+
+set number		 " show line numbers
+set nowrap		 " do not wrap lines
+set tabstop=2		 " a tab is 2 spaces
+set autoindent		 " always set autoindenting on
+set shiftwidth=2	 " set number of spaces to use for autoindenting
+set expandtab
+set smarttab
+
+set autoread      " set to auto read when a file is changed from the outside
+" set showmatch     " set matching brackets when text indicator is over them
+
+" airline
+set laststatus=2
+let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
+
+runtime! macros/matchit.vim
+
+" ctrlp
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_map = '<C-p>' " change the default mapping
+let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
+set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
+let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
+let g:ctrlp_show_hidden = 1 " index dotfiles
+let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
+
+map <leader>o :CtrlPRoot<cr>
+>>>>>>> Add more to tern
 
 " toggle line numbers
 nnoremap <F9> :set number!<cr>
