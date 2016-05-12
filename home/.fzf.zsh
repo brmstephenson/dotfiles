@@ -23,6 +23,10 @@ fi
 
 # Key bindings
 # ------------
-source "/home/adam/.fzf/shell/key-bindings.zsh"
-source "/home/acb29/.fzf/shell/key-bindings.zsh"
+if [[ -f /home/adam/.fzf/shell/key-bindings.zsh ]]; then
+  source "/home/adam/.fzf/shell/key-bindings.zsh"
+fi
+if [[ -f /home/acb29/.fzf/shell/key-bindings.zsh ]]; then
+  source "/home/acb29/.fzf/shell/key-bindings.zsh"
+fi
 
