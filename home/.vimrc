@@ -2,81 +2,62 @@ set nocompatible
 set backspace=2
 filetype off
 
-" clone Vundle directory if it doesn't already exist
-if !isdirectory(expand("~/.vim/bundle/Vundle.vim/.git"))
-  !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-endif
-
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Information panels
-Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
+Plug 'edkolev/tmuxline.vim'
+Plug 'airblade/vim-gitgutter'
 
 " Autocomplete
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'marijnh/tern_for_vim'
 
-Plugin 'kien/ctrlp.vim' " fuzzy file finder
-Plugin 'tpope/vim-fugitive' " Git wrapper
-Plugin 'mattn/emmet-vim' " improves HTML & CSS workflow
-Plugin 'tpope/vim-commentary' " comment stuff out
-Plugin 'ervandew/supertab' " perform all your vim inster mode completions with Tab
-Plugin 'scrooloose/syntastic' " Checks for syntax errors
-Plugin 'tpope/vim-surround' " quoting/parenthesizing made simple
-Plugin 'godlygeek/tabular' " vim script for text filtering and alignment
-" Plugin 'scrooloose/nerdtree' " file tree explorer
-Plugin 'bling/vim-bufferline' " show bufferes in the command bar
-Plugin 'editorconfig/editorconfig-vim' " editor config plugin
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'qpkorr/vim-bufkill'
-" Plugin 'gerw/vim-HiLinkTrace'
+" Plug 'kien/ctrlp.vim' " fuzzy file finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive' " Git wrapper
+Plug 'mattn/emmet-vim' " improves HTML & CSS workflow
+Plug 'tpope/vim-commentary' " comment stuff out
+Plug 'ervandew/supertab' " perform all your vim inster mode completions with Tab
+Plug 'scrooloose/syntastic' " Checks for syntax errors
+Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
+Plug 'godlygeek/tabular' " vim script for text filtering and alignment
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'bling/vim-bufferline' " show bufferes in the command bar
+Plug 'editorconfig/editorconfig-vim' " editor config plugin
+Plug 'terryma/vim-multiple-cursors'
+Plug 'qpkorr/vim-bufkill'
 
-" Snippets
-" Bundle 'tomtom/tlib_vim'
-" Bundle 'MarcWeber/vim-addon-mw-utils'
-" Bundle 'garbas/vim-snipmate'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " Syntax highlighters
-Plugin 'plasticboy/vim-markdown'
-Plugin 'pangloss/vim-javascript'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'mustache/vim-mustache-handlebars'
-" Plugin 'jelera/vim-javascript-syntax'
-Plugin 'mxw/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'othree/html5.vim'
-" Plugin 'burnettk/vim-angular'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'fatih/vim-go'
-" Plugin 'wookiehangover/jshint.vim'
-Plugin 'moskytw/nginx-contrib-vim'
-Plugin 'elzr/vim-json'
-
-" Plugin 'ElmCast/elm-vim'
-" Plugin 'lambdatoast/elm.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'pangloss/vim-javascript'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+Plug 'othree/html5.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'fatih/vim-go'
+Plug 'moskytw/nginx-contrib-vim'
+Plug 'elzr/vim-json'
 
 " Colorschemes
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'jgdavey/vim-railscasts'
-Plugin 'goatslacker/mango.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'blerins/flattown'
-Plugin 'crusoexia/vim-monokai'
-Plugin 'yosiat/oceanic-next-vim'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'jgdavey/vim-railscasts'
+Plug 'goatslacker/mango.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/seoul256.vim'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'blerins/flattown'
+Plug 'crusoexia/vim-monokai'
+Plug 'yosiat/oceanic-next-vim'
+Plug 'vim-airline/vim-airline-themes'
 
 " All plugins must be added before the following line
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 color lucius
@@ -150,22 +131,23 @@ while c <= 99
 endwhile
 
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_working_path_mode = 'rw'
-let g:ctrlp_map = '<C-p>' " change the default mapping
-let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
-set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
-let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
-let g:ctrlp_show_hidden = 1 " index dotfiles
-let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
+" let g:ctrlp_working_path_mode = 'rw'
+" let g:ctrlp_map = '<C-p>' " change the default mapping
+" let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
+" set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
+" let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
+" let g:ctrlp_show_hidden = 1 " index dotfiles
+" let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 " let g:ctrlp_root_markers = ['.gitignore']
 " map <C-p> :CtrlPRoot<cr>
+map <C-p> :FZF<cr>
 
 " toggle line numbers
 nnoremap <F9> :set number!<cr>
 
 " nerdtree
 " map <C-n> :NERDTreeToggle<CR>
-map <C-i> :NERDTreeToggle<CR>
+" map <C-i> :NERDTreeToggle<CR>
 
 "git gutter (with railscasts)
 highlight SignColumn ctermbg=black
@@ -213,9 +195,9 @@ let g:syntastic_javascript_checkers=JavascriptLinters()
 " smap <C-J> <Plug>snipMateNextOrTrigger
 
 " Change utilsnips so it does not use tab by default
-let g:UltiSnipsExpandTrigger="<C-J>"
+let g:UltiSnipsExpandTrigger="<C-O>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-Z>"
+let g:UltiSnipsJumpBackwardTrigger="<C-I>"
 
 " allows me to use Alt key
 " http://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim

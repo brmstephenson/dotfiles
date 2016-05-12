@@ -30,3 +30,5 @@ alias tsc='npmexec tsc'
 
 alias fix="git diff --name-only | uniq | xargs vim"
 alias nr='npm run'
+
+# alias adam="vim $(fzf)"
