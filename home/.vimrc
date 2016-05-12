@@ -154,19 +154,6 @@ let g:airline_theme='powerlineish'
 
 runtime! macros/matchit.vim
 
-" ctrlp
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_map = '<C-p>' " change the default mapping
-let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
-set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
-let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
-let g:ctrlp_show_hidden = 1 " index dotfiles
-let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
-
-map <leader>o :CtrlPRoot<cr>
->>>>>>> Add more to tern
-
 " toggle line numbers
 nnoremap <F9> :set number!<cr>
 
