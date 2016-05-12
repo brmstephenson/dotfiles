@@ -13,7 +13,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim'
 
-" Plug 'kien/ctrlp.vim' " fuzzy file finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive' " Git wrapper
@@ -130,16 +129,6 @@ while c <= 99
   let c += 1
 endwhile
 
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
-" let g:ctrlp_working_path_mode = 'rw'
-" let g:ctrlp_map = '<C-p>' " change the default mapping
-" let g:ctrlp_cmd = 'CtrlP' " change the defualt command to invoke CtrlP
-" set wildignore+=*/.tmp*,*.so,*.swp,*.zip " exclude files and directories
-" let g:ctrlp_custom_ignore = '\v[\/](.*reports.*|\.idea|jspm_packages|node_modules|bower_components|dist|target)|(\.(swp|ico|git))$'
-" let g:ctrlp_show_hidden = 1 " index dotfiles
-" let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
-" let g:ctrlp_root_markers = ['.gitignore']
-" map <C-p> :CtrlPRoot<cr>
 map <C-p> :FZF<cr>
 
 " toggle line numbers
@@ -147,7 +136,7 @@ nnoremap <F9> :set number!<cr>
 
 " nerdtree
 " map <C-n> :NERDTreeToggle<CR>
-" map <C-i> :NERDTreeToggle<CR>
+map <C-i> :NERDTreeToggle<CR>
 
 "git gutter (with railscasts)
 highlight SignColumn ctermbg=black
@@ -189,15 +178,14 @@ endfunction
 " https://github.com/scrooloose/syntastic/issues/974#issuecomment-73837549
 let g:syntastic_javascript_checkers=JavascriptLinters()
 
-
-" Change snipmate so it does not use tab by default
-" imap <C-J> <Plug>snipMateNextOrTrigger
-" smap <C-J> <Plug>snipMateNextOrTrigger
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " Change utilsnips so it does not use tab by default
-let g:UltiSnipsExpandTrigger="<C-O>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-I>"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 " allows me to use Alt key
 " http://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim
