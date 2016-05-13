@@ -120,5 +120,4 @@ _fzf_compgen_path() {
   ag -g "" "$1"
 }
 
-set -o vi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

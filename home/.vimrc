@@ -87,6 +87,8 @@ set autoread      " set to auto read when a file is changed from the outside
 set showmatch     " set matching brackets when text indicator is over them
 set timeout ttimeoutlen=50
 
+imap <c-x><c-k> <plug>(fzf-complete-path)
+
 " airline
 set laststatus=2
 let g:airline_powerline_fonts=1
@@ -136,6 +138,8 @@ runtime! macros/matchit.vim
 
 " toggle line numbers
 nnoremap <F9> :set number!<cr>
+" show the full file name
+map <F7> <Esc>:echo expand('%:p')<Return>
 
 " nerdtree
 map <C-i> :NERDTreeToggle<CR>
@@ -224,11 +228,7 @@ map <F11> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 au BufRead,BufNewFile *.ats setfiletype typescript
-autocmd BufEnter * silent! lcd %:p:h
-
 au BufRead,BufNewFile .eslintrc,.jscsrc,.jshintrc setfiletype json
-
-map <F7> <Esc>:echo expand('%:p')<Return>
 
 " The Silver Searcher
 if executable('ag')
