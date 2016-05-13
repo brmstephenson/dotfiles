@@ -87,7 +87,6 @@ set autoread      " set to auto read when a file is changed from the outside
 set showmatch     " set matching brackets when text indicator is over them
 set timeout ttimeoutlen=50
 
-
 " airline
 set laststatus=2
 let g:airline_powerline_fonts=1
@@ -133,32 +132,12 @@ map <C-p> :FZF<cr>
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
 
-"open the buffer list
-nnoremap <F10> :b <C-Z>
-
-set number		 " show line numbers
-set nowrap		 " do not wrap lines
-set tabstop=2		 " a tab is 2 spaces
-set autoindent		 " always set autoindenting on
-set shiftwidth=2	 " set number of spaces to use for autoindenting
-set expandtab
-set smarttab
-
-set autoread      " set to auto read when a file is changed from the outside
-" set showmatch     " set matching brackets when text indicator is over them
-
-" airline
-set laststatus=2
-let g:airline_powerline_fonts=1
-let g:airline_theme='powerlineish'
-
 runtime! macros/matchit.vim
 
 " toggle line numbers
 nnoremap <F9> :set number!<cr>
 
 " nerdtree
-" map <C-n> :NERDTreeToggle<CR>
 map <C-i> :NERDTreeToggle<CR>
 
 "git gutter (with railscasts)
@@ -181,11 +160,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" close syntastic error window by deleting buffer
-nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
-cabbrev <silent> bd lclose\|bdelete
-
 
 function! JavascriptLinters()
   let checkers = []
@@ -260,10 +234,4 @@ map <F7> <Esc>:echo expand('%:p')<Return>
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
 endif
