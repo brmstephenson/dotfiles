@@ -1,6 +1,5 @@
 set nocompatible
 set backspace=2
-filetype off
 
 call plug#begin('~/.vim/plugged')
 
@@ -28,7 +27,7 @@ Plug 'editorconfig/editorconfig-vim' " editor config plugin
 Plug 'terryma/vim-multiple-cursors'
 Plug 'qpkorr/vim-bufkill'
 
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' | Plug 'mlaursen/vim-react-snippets'
 
 " Syntax highlighters
 Plug 'plasticboy/vim-markdown'
@@ -57,7 +56,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 " All plugins must be added before the following line
 call plug#end()
-filetype plugin indent on
 
 color lucius
 syntax on
@@ -131,6 +129,10 @@ while c <= 99
 endwhile
 
 map <C-p> :FZF<cr>
+map <leader><C-p> :GitFiles<cr>
+
+map <leader><C-b> :Buffer<cr>
+map <leader><C-h> :History<cr>
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
 
@@ -187,6 +189,8 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+let g:UltiSnipsUsePythonVersion = 2
 
 " allows me to use Alt key
 " http://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim
