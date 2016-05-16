@@ -1,23 +1,24 @@
 set nocompatible
 set backspace=2
+filetype off
 
 call plug#begin('~/.vim/plugged')
+
+" Autocomplete
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 " Information panels
 Plug 'bling/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 
-" Autocomplete
-Plug 'Valloric/YouCompleteMe'
-Plug 'marijnh/tern_for_vim'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive' " Git wrapper
 Plug 'mattn/emmet-vim' " improves HTML & CSS workflow
 Plug 'tpope/vim-commentary' " comment stuff out
-Plug 'ervandew/supertab' " perform all your vim inster mode completions with Tab
+Plug 'ervandew/supertab'
 Plug 'scrooloose/syntastic' " Checks for syntax errors
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'godlygeek/tabular' " vim script for text filtering and alignment
@@ -56,6 +57,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " All plugins must be added before the following line
 call plug#end()
+filetype plugin indent on
 
 color lucius
 syntax on
@@ -133,8 +135,8 @@ map <leader><C-p> :GitFiles<cr>
 
 map <leader><C-b> :Buffer<cr>
 map <leader><C-h> :History<cr>
-set wildchar=<Tab> wildmenu wildmode=full
-set wildcharm=<C-Z>
+" set wildchar=<Tab> wildmenu wildmode=full
+" set wildcharm=<C-Z>
 
 runtime! macros/matchit.vim
 
@@ -189,8 +191,6 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-
-let g:UltiSnipsUsePythonVersion = 2
 
 " allows me to use Alt key
 " http://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim
