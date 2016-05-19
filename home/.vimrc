@@ -1,5 +1,6 @@
 set nocompatible
 set backspace=2
+set runtimepath+=~/.vim/my-snippets/
 filetype off
 
 call plug#begin('~/.vim/plugged')
@@ -86,6 +87,9 @@ set completeopt-=preview " Don't show autocomplete split
 set autoread      " set to auto read when a file is changed from the outside
 set showmatch     " set matching brackets when text indicator is over them
 set timeout ttimeoutlen=50
+
+set backupdir=/tmp/
+set directory=/tmp/
 
 imap <c-x><c-k> <plug>(fzf-complete-path)
 
