@@ -134,7 +134,7 @@ while c <= 99
   let c += 1
 endwhile
 
-map <C-p> :FZF<cr>
+map <C-p> :FZF --multi<cr>
 map <leader><C-p> :GitFiles<cr>
 
 map <leader><C-b> :Buffer<cr>
