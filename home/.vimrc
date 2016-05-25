@@ -33,7 +33,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' | Plug 'mlaursen/vim-react-s
 
 " Syntax highlighters
 Plug 'plasticboy/vim-markdown'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'branch': 'develop' }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
