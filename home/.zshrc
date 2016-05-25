@@ -121,3 +121,13 @@ _fzf_compgen_path() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function chpwd {
+  if [[ -d $PWD/node_modules ]]; then
+    export PATH=$(npm bin):$PATH
+  fi
+}
+
+if [[ -d $PWD/node_modules ]]; then
+  export PATH=$(npm bin):$PATH
+fi

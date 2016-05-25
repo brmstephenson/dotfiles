@@ -173,10 +173,13 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+let g:javascript_eslint_exe = 'npmexec eslint --'
+
 function! JavascriptLinters()
   let checkers = []
   let eslint = findfile('.eslintrc', '.;') != '' ? add(checkers, 'eslint') : ''
-  let eslintjson = findfile('.eslint.json', '.;') !='' ? add(checkers, 'eslint') : ''
+  let eslintjson = findfile('.eslintrc.json', '.;') !='' ? add(checkers, 'eslint') : ''
   let jscs = findfile('.jscsrc', '.;') != '' ? add(checkers, 'jscs') : ''
   let jshint = findfile('.jshintrc', '.;') != '' ? add(checkers, 'jshint') : ''
 
