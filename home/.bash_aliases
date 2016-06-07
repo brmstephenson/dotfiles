@@ -16,18 +16,15 @@ alias dsar='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 
 unalias rm 2>/dev/null
 
-# alias npmexec='PATH=$(npm bin):$PATH'
-# alias webpack='npmexec webpack'
-# alias webpack-dev-server='npmexec webpack-dev-server'
-# alias gulp='npmexec gulp'
-# alias http-server='npmexec http-server'
-# alias karma='npmexec karma'
-# alias babel-node='npmexec babel-node'
-# alias nodemon='npmexec nodemon'
-# alias eslint='PATH=$(npm bin):$PATH && which eslint'
-# alias tsc='npmexec tsc'
+alias npmexec='PATH=$(npm bin):$PATH'
+alias webpack='npmexec webpack'
+alias webpack-dev-server='npmexec webpack-dev-server'
+alias gulp='npmexec gulp'
+alias http-server='npmexec http-server'
+alias karma='npmexec karma'
+alias babel-node='npmexec babel-node'
+alias nodemon='npmexec nodemon'
+alias eslint='PATH=$(npm bin):$PATH && which eslint'
+alias tsc='npmexec tsc'
 
 alias fix="git diff --name-only | uniq | xargs vim"
-alias nr='npm run'
-
-# alias adam="vim $(fzf)"

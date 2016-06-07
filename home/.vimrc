@@ -127,6 +127,10 @@ nnoremap <leader>8 :8b<cr>
 nnoremap <leader>9 :9b<cr>
 nnoremap <leader>0 :10b<cr>
 
+nnoremap <leader>b :Buffers<cr>
+map <leader>jj :Ag<cr>
+map <leader>z :redraw!<cr>
+
 "allow to switch buffers by {Buffer#}gb (e.g. 52gb --> buffer 52)
 let c = 1
 while c <= 99
