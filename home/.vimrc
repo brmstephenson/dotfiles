@@ -21,6 +21,7 @@ Plug 'mattn/emmet-vim' " improves HTML & CSS workflow
 Plug 'tpope/vim-commentary' " comment stuff out
 Plug 'ervandew/supertab'
 Plug 'scrooloose/syntastic' " Checks for syntax errors
+Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'godlygeek/tabular' " vim script for text filtering and alignment
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -176,9 +177,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-let g:javascript_eslint_exe = 'npmexec eslint --'
 
 function! JavascriptLinters()
   let checkers = []

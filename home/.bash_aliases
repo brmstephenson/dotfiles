@@ -24,7 +24,8 @@ alias http-server='npmexec http-server'
 alias karma='npmexec karma'
 alias babel-node='npmexec babel-node'
 alias nodemon='npmexec nodemon'
-alias eslint='PATH=$(npm bin):$PATH && which eslint'
+# alias eslint='PATH=$(npm bin):$PATH && which eslint'
+alias eslint='npmexec eslint'
 alias tsc='npmexec tsc'
 
 alias fix="git diff --name-only | uniq | xargs vim"
