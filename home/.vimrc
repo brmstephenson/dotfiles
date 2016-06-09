@@ -248,3 +248,14 @@ if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 endif
+
+let vimDir = '$HOME/.vim'
+
+if has('persistent_undo')
+  let myUndoDir = expand(vimDir . '/undoDir')
+
+  call system('mkdir ' . vimDir)
+  call system('mkdir ' . myUndoDir)
+  let &undodir = myUndoDir
+  set undofile
+endif
