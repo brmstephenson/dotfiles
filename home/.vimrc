@@ -128,7 +128,6 @@ nnoremap <leader>8 :8b<cr>
 nnoremap <leader>9 :9b<cr>
 nnoremap <leader>0 :10b<cr>
 
-nnoremap <leader>b :Buffers<cr>
 map <leader>jj :Ag<cr>
 map <leader>z :redraw!<cr>
 
@@ -142,8 +141,9 @@ endwhile
 map <C-p> :FZF --multi<cr>
 map <leader><C-p> :GitFiles<cr>
 
-map <leader><C-b> :Buffer<cr>
-map <leader><C-h> :History<cr>
+nnoremap <leader>b :Buffers<cr>
+map <leader>h :History<cr>
+map <leader>/ :History/<cr>
 " set wildchar=<Tab> wildmenu wildmode=full
 " set wildcharm=<C-Z>
 
