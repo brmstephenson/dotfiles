@@ -2,6 +2,7 @@ set nocompatible
 set backspace=2
 set runtimepath+=~/.vim/my-snippets/
 filetype off
+set t_Co=256
 
 call plug#begin('~/.vim/plugged')
 
